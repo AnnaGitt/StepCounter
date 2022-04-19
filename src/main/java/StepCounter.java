@@ -4,6 +4,10 @@ import java.util.Map;
 public class StepCounter {
     private Map<Integer, Integer> stepsPerDay = new HashMap<>();
 
+    public Map<Integer, Integer> getStepsPerDay() {
+        return stepsPerDay;
+    }
+
     public void add(int day, int steps) {
         if (day <= 0 || steps < 0) {
             return;
