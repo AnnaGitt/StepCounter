@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class StepCounter {
+public class StepCounter implements Comparable<StepCounter> {
     private Map<Integer, Integer> stepsPerDay = new HashMap<>();
 
     public Map<Integer, Integer> getStepsPerDay() {
@@ -28,11 +28,32 @@ public class StepCounter {
                 maxNumOfSteps = stepsPerDay.get(day);
             }
         }
-        if(maxNumOfSteps<=stepsPerDay.get(wantedDay)){
+        if (maxNumOfSteps <= stepsPerDay.get(wantedDay)) {
             return 0;
         }
         return maxNumOfSteps - stepsPerDay.get(wantedDay);
     }
 
+    public int sumSteps() {
+        int sumSteps = 0;
+        for (int day : stepsPerDay.keySet()) {
+            sumSteps += stepsPerDay.get(day);
+        }
+        return sumSteps;
+    }
 
+    public int DaysWithStepsMoreMin(int min) {
+        int StepsMoreMin = 0;
+        for (int day : stepsPerDay.keySet()) {
+            if (stepsPerDay.get(day) > min) {
+                StepsMoreMin++;
+            }
+        }
+        return StepsMoreMin;
+    }
+
+    @Override
+    public int compareTo(StepCounter stepCounter) {
+        return sumSteps() - stepCounter.sumSteps();
+    }
 }

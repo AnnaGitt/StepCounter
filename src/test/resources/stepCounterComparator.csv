@@ -1,0 +1,4 @@
+Step counter 1 >,1,900,1000,900,1
+Step counter 1 <,1,900,900,1000,-1
+Step counters equal,1,900,900,900,0
+Step counters equal min <0,1,-900,1000,900,0

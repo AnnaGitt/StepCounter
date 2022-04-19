@@ -1,0 +1,3 @@
+StepCouners 1 >,1,1000,500,1
+StepCouners 1 <,1,1000,1500,-1
+StepCouners equals,1,1000,1000,0
