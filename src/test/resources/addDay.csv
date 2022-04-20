@@ -1,5 +1,2 @@
 Day = 1,1,1000,true
-Day = 0,0,1000,false,
-Day = -1,-1,1000,false
-Steps = -1000,1,-1000,false
 Steps = 0,1,0,true

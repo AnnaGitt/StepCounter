@@ -13,6 +13,6 @@ public class StepCounterComparator implements Comparator<StepCounter> {
 
     @Override
     public int compare(StepCounter sC1, StepCounter sC2) {
-        return sC1.DaysWithStepsMoreMin(minStepsPerDay) - sC2.DaysWithStepsMoreMin(minStepsPerDay);
+        return sC1.daysWithStepsMoreMin(minStepsPerDay) - sC2.daysWithStepsMoreMin(minStepsPerDay);
     }
 }

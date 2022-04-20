@@ -14,7 +14,7 @@ public class StepCounterTest {
         stepCounter.add(2, 800);
         stepCounter.add(3, 1500);
         int expected = 500;
-        int actual = stepCounter.StepsToIncreaseMax(1);
+        int actual = stepCounter.stepsToIncreaseMax(1);
         Assertions.assertEquals(actual, expected);
     }
 
@@ -25,7 +25,7 @@ public class StepCounterTest {
         stepCounter.add(2, 800);
         stepCounter.add(3, 1500);
         int expected = 0;
-        int actual = stepCounter.StepsToIncreaseMax(3);
+        int actual = stepCounter.stepsToIncreaseMax(3);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -36,7 +36,7 @@ public class StepCounterTest {
         stepCounter.add(2, 800);
         stepCounter.add(3, 1000);
         int expected = 0;
-        int actual = stepCounter.StepsToIncreaseMax(1);
+        int actual = stepCounter.stepsToIncreaseMax(1);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -47,7 +47,7 @@ public class StepCounterTest {
         stepCounter.add(2, 0);
         stepCounter.add(3, 0);
         int expected = 0;
-        int actual = stepCounter.StepsToIncreaseMax(1);
+        int actual = stepCounter.stepsToIncreaseMax(1);
         Assertions.assertEquals(expected, actual);
     }
 
