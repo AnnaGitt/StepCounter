@@ -1,5 +1,8 @@
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 
 public class StepCounter implements Comparable<StepCounter> {
     private Map<Integer, Integer> stepsPerDay = new HashMap<>();
@@ -56,4 +59,16 @@ public class StepCounter implements Comparable<StepCounter> {
     public int compareTo(StepCounter stepCounter) {
         return sumSteps() - stepCounter.sumSteps();
     }
+
+    public List<String> printAllDaysByCriteria(Predicate<Integer> criteria) {
+        List<String> daysByCriteria = new ArrayList<>();
+        for (int days : stepsPerDay.keySet()) {
+            if (criteria.test(stepsPerDay.get(days))) {
+                daysByCriteria.add("День " + days + " кол-во шагов: " + stepsPerDay.get(days));
+            }
+        }
+        System.out.println(daysByCriteria);
+        return daysByCriteria; //Возвращаю arrayList для проверках в тесте
+    }
 }
+
