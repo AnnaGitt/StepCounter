@@ -13,12 +13,10 @@ public class StepCounter implements Comparable<StepCounter> {
 
     public void add(int day, int steps) {
         if (day <= 0 || day > 365) {
-            throw new RuntimeException("First parameter cannot accept " +
-                    "a negative value or value more than 365. Your value:" + day);
+            throw new IllegalDayException(day);
         }
         if (steps < 0) {
-            throw new RuntimeException("Second parameter cannot accept a negative value" +
-                    "Your value: " + steps);
+            throw new IllegalStepsException(steps);
         }
         if (stepsPerDay.containsKey(day)) {
             stepsPerDay.put(day, stepsPerDay.get(day) + steps);
@@ -29,7 +27,7 @@ public class StepCounter implements Comparable<StepCounter> {
 
     public int stepsToIncreaseMax(int wantedDay) {
         if (!stepsPerDay.containsKey(wantedDay)) {
-            throw new RuntimeException("Parameter out of set keys. Your parameter: " + wantedDay);
+            throw new IllegalDayException(wantedDay);
         }
         int maxNumOfSteps = 0;
         for (int day : stepsPerDay.keySet()) {
